@@ -2,3 +2,14 @@
 <div>
     <input [(ngModel)]="hero.name" placeholder="name" />
 </div>
+<ul class="heroes" >
+    <li [class.selected]="h === selectedHeroe"
+        *ngFor="let h of heroes" 
+        (click)="onSelectHeroe(h)">
+        <span class="badge">{{h.id}}</span> {{h.name}}
+    </li>
+</ul>
+
+<div>
+    <span>selected Heroe : {{ selectedHeroe.name }}</span>
+</div>
